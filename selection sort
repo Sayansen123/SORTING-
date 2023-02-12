@@ -1,0 +1,61 @@
+//sayan sen sharma
+//data science
+//1st sem
+
+//selection sort
+
+
+#include<stdio.h>
+//display
+ int display(int A[],int n)
+{
+	int j;
+	printf("elements are:\t");
+	for(j=0;j<n;j++)
+	{
+		printf("%d\t",A[j]);
+	}
+	return 0;
+}
+//selection sort
+int selectionsort(int A[],int n)
+{
+	int i,j;
+	int temp,min;
+	  for(i=0;i<n-1;i++)
+	  {
+	     min=i;
+	  	for(j=i+1;j<n;j++)
+	  	{
+	  		if(A[j]<A[min])
+	  		{
+	  			min=j;
+			  }
+		}
+			  if(min!=i)
+			  {
+			  	temp=A[min];
+			  	A[min]=A[i];
+			  	A[i]=temp;	
+			  }
+	  }
+	  	printf("\nafter sorting ");
+	return 0;
+}
+int main()
+{
+	int n;
+	printf("enter the number of element\n");
+	scanf("%d",&n);
+	int A[n];
+	int K;
+	for(K=0;K<n;K++)
+	{
+		printf("enter the data\n");
+		scanf("%d",&A[K]);
+	}
+	display(&A[0],n);
+	selectionsort(&A[0],n);
+	display(&A[0],n);
+	return 0;
+}

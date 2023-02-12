@@ -1,0 +1,54 @@
+//sayan sen sharma
+//data science
+//1st sem
+
+//linear search in an array
+
+#include<stdio.h>
+// display
+ int display(int A[],int n)
+{
+	int j;
+	printf("entered elements are:\t");
+	for(j=0;j<n;j++)
+	{
+		printf("%d\t",A[j]);
+	}
+	return 0;
+}
+//linear search
+int linearsearch(int A[],int n)
+{
+	int i;
+	int data;
+	printf("\nenter the data:");
+	scanf("%d",&data);
+	for(i=0;i<n;i++)
+	{
+		if(A[i]==data)
+		{
+			printf("\nelement is at index:%d",i);
+		}
+		if(i==n)
+		{
+			printf("data not found");
+		}
+	}
+	return 0;
+}
+int main()
+{
+	int n;
+	printf("enter the number of element\n");
+	scanf("%d",&n);
+	int A[n];
+	int k;
+	for(k=0;k<n;k++)
+	{
+		printf("enter the data\n");
+		scanf("%d",&A[k]);
+	}
+	display(&A[0],n);
+	linearsearch(&A[0],n);
+	return 0;
+}

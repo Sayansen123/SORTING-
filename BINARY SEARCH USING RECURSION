@@ -1,0 +1,93 @@
+//sayan sen sharma
+//data science
+//1st sem
+
+//binary search in an array using recursion
+
+
+#include<stdio.h>
+//display
+ int display(int A[],int n)
+{
+	int j;
+	printf("elements are:\t");
+	for(j=0;j<n;j++)
+	{
+		printf("%d\t",A[j]);
+	}
+	return 0;
+}
+//bubblesort
+int bubblesort(int A[],int n)
+{
+	int i,j;
+	int temp;
+	for(i=0;i<n-1;i++)
+{
+		int flag=0;
+		for(j=0;j<n-1-i;j++)
+		{
+			if(A[j]>A[j+1])
+			{
+				temp=A[j];
+				A[j]=A[j+1];
+				A[j+1]=temp;
+				flag=1;
+			}
+		}
+		if(flag==0)
+		{
+		    break;		   
+		}
+	}
+		printf("\nafter sorting ");
+	return 0;
+}
+//recursion_binary search
+int binarysearch(int A[],int data,int l,int r)
+{
+	int mid;
+		mid=(l+r)/2;
+		if(data==A[mid])
+		{
+			printf("\nelement is at index:%d",mid);
+		}
+		else if(data>A[mid])
+		{
+			binarysearch(&A[0],data,mid+1,r);
+		}
+		else
+		{
+			binarysearch(&A[0],data,l,mid-1);
+		}
+	if(l>r)
+	{
+	printf("data not found");
+}
+return 0;
+}
+int main()
+{
+	int n;
+	printf("enter the number of element\n");
+	scanf("%d",&n);
+	int A[n];
+	int k;
+	for(k=0;k<n;k++)
+	{
+		printf("enter the data\n");
+		scanf("%d",&A[k]);
+	}
+	display(&A[0],n);
+	bubblesort(&A[0],n);
+	display(&A[0],n);
+	int l,r;
+	int data;
+	l=0;
+	r=n-1;
+	printf("\nenter the data:");
+	scanf("%d",&data);
+	binarysearch(&A[0],data,l,r);
+	return 0;
+}
+
